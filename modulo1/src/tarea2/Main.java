@@ -1,5 +1,6 @@
 package tarea2;
 import tarea2.futbol.ui.FootballCli;
+import tarea2.autobuses.ui.BusCli;
 /**
  * Clase principal que contiene el método main para iniciar la práctica de fútbol o de autobús.
  */
@@ -11,7 +12,7 @@ class Main {
      * @param args Los argumentos de la línea de comandos (no se utilizan en este caso).
      */
     public static void main(String[] args) {
-        FootballCli.footBallPractice();
-        // BusCli.passengerPractice();
+       FootballCli.footBallPractice();
+        //BusCli.passengerPractice();
     }
 }
