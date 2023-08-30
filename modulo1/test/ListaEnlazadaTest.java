@@ -54,4 +54,3 @@ public class ListaEnlazadaTest {
         assertEquals(1, lista.size());
     }
 }
-

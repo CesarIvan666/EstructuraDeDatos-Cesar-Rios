@@ -174,4 +174,3 @@ public class ListaEnlazada<T> implements Lista<T> {
         return S;
     }
 }
-
