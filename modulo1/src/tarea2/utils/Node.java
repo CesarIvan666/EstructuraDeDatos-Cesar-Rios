@@ -1,6 +1,5 @@
 package tarea2.utils;
 import java.util.Optional;
-import java.util.Optional;
 
 /**
  * Clase que define un nodo utilizado en estructuras de datos enlazadas.
