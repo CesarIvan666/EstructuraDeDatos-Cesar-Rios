@@ -1,7 +1,9 @@
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import java.util.Optional;
-import tarea2.utils.ListaEnlazada;
+import utils.*;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Clase de pruebas para la implementación de ListaEnlazada.
@@ -52,6 +54,53 @@ public class ListaEnlazadaTest {
         lista.add(Optional.of(5));
         assertEquals(Optional.of(5), lista.get(0));
         assertEquals(1, lista.size());
+    }
+
+    //pruebas para metodos addfirst y removefirst
+    /**
+     * Prueba para el método addFirst para agregar elementos al principio de la lista.
+     */
+    @Test
+    public void addFirstTest(){
+        ListaEnlazada<Integer> lista = new ListaEnlazada<>();
+        lista.addFirst(5);
+        lista.addFirst(78);
+        lista.addFirst(105);
+        Assert.assertTrue(lista.get(0).get()==105);
+        Assert.assertFalse(lista.get(0).get()==5);
+        Assert.assertEquals(3,lista.size());
+    }
+
+    /**
+     * Prueba para los métodos addFirst y add para agregar elementos al principio y final de la lista.
+     */
+    @Test
+    public void addFirst_and_add_Test(){
+        ListaEnlazada<Integer> lista = new ListaEnlazada<>();
+        lista.addFirst(5);
+        lista.add(78);
+        lista.addFirst(105);
+        Assert.assertTrue(lista.get(0).get()==105);
+        Assert.assertTrue(lista.get(1).get()==5);
+        Assert.assertTrue(lista.get(2).get()==78);
+        Assert.assertEquals(3,lista.size());
+    }
+
+    /**
+     * Prueba para el método removeFirst para eliminar el primer elemento de la lista.
+     */
+    @Test
+    public void removeFirstTest(){
+        ListaEnlazada<Integer> lista = new ListaEnlazada<>();
+        lista.add(5);
+        lista.add(78);
+        lista.add(105);
+        lista.removeFirst();
+
+        Assert.assertFalse(lista.contains(5));
+        Assert.assertTrue(lista.get(0).get()==78);
+        Assert.assertTrue(lista.get(1).get()==105);
+        Assert.assertEquals(2,lista.size());
     }
 }
 
