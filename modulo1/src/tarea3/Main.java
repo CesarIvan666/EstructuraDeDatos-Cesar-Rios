@@ -1,16 +1,18 @@
 package tarea3;
 import tarea3.ui.CLI;
 /**
- * La clase Main proporciona el punto de entrada principal para la aplicación.
+ * Esta clase contiene el método principal que se utiliza para iniciar la aplicación
+ * y llamar al método principal de la clase CLI.
  */
-class Main {
+public class Main {
+
     /**
-     * El método main es el punto de entrada principal para la aplicación.
+     * El método principal de la aplicación que inicia la ejecución y llama al método principal
+     * de la clase CLI para interactuar con el usuario y procesar expresiones.
      *
-     * @param args Los argumentos de línea de comandos (no se utilizan en este caso).
+     * @param args Los argumentos de línea de comandos (que no se utilizan en este caso).
      */
     public static void main(String[] args) {
-        // Llama al método main de la clase CLI para iniciar la aplicación de línea de comandos.
         CLI.main();
     }
 }

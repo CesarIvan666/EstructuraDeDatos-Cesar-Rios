@@ -2,7 +2,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import java.util.Optional;
 import utils.*;
-
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -58,7 +57,7 @@ public class ListaEnlazadaTest {
 
     //pruebas para metodos addfirst y removefirst
     /**
-     * Prueba para el método addFirst para agregar elementos al principio de la lista.
+     * Prueba para agregar elementos al principio de la lista y verificar que se agreguen correctamente.
      */
     @Test
     public void addFirstTest(){
@@ -70,9 +69,8 @@ public class ListaEnlazadaTest {
         Assert.assertFalse(lista.get(0).get()==5);
         Assert.assertEquals(3,lista.size());
     }
-
     /**
-     * Prueba para los métodos addFirst y add para agregar elementos al principio y final de la lista.
+     * Prueba para agregar un elemento al principio de la lista y verificar que se agregue correctamente.
      */
     @Test
     public void addFirst_and_add_Test(){
@@ -87,7 +85,7 @@ public class ListaEnlazadaTest {
     }
 
     /**
-     * Prueba para el método removeFirst para eliminar el primer elemento de la lista.
+     * Prueba para eliminar el primer elemento de la lista y verificar que se elimine correctamente.
      */
     @Test
     public void removeFirstTest(){
@@ -103,4 +101,3 @@ public class ListaEnlazadaTest {
         Assert.assertEquals(2,lista.size());
     }
 }
-
