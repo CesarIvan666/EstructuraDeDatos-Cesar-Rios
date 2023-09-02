@@ -2,16 +2,15 @@ package tarea3.process;
 import utils.*;
 //import java.util.Stack;
 /**
- * La clase ExpConverter proporciona métodos para convertir expresiones infix en postfix
- * y evaluar expresiones postfix.
+ * Esta clase proporciona métodos para convertir una expresión infija en una expresión postfija
+ * y para evaluar una expresión postfija.
  */
 public class ExpConverter {
-
     /**
-     * Devuelve la precedencia de un operador dado.
+     * Determina la precedencia de un operador.
      *
-     * @param ch El operador para el cual se desea obtener la precedencia.
-     * @return La precedencia del operador (1 para + y -, 2 para * y /, 3 para ^), o -1 si no es un operador válido.
+     * @param ch El operador para el cual se desea determinar la precedencia.
+     * @return Un entero que representa la precedencia del operador.
      */
     static int Prec(char ch) {
         switch (ch) {
@@ -28,12 +27,11 @@ public class ExpConverter {
         }
         return -1;
     }
-
     /**
-     * Convierte una expresión infix en una expresión postfix.
+     * Convierte una expresión infija en una expresión postfija.
      *
-     * @param exp La expresión infix a convertir.
-     * @return La expresión postfix resultante.
+     * @param exp La expresión infija a convertir.
+     * @return La expresión postfija resultante como una cadena de caracteres.
      */
     public static String infixToPostfix(String exp) {
         String result = new String("");
@@ -71,12 +69,11 @@ public class ExpConverter {
 
         return result;
     }
-
     /**
-     * Evalúa una expresión postfix y devuelve el resultado.
+     * Evalúa una expresión postfija y devuelve el resultado.
      *
-     * @param exp La expresión postfix a evaluar.
-     * @return El resultado de la evaluación de la expresión.
+     * @param exp La expresión postfija a evaluar.
+     * @return El resultado de la evaluación de la expresión como un entero.
      */
     public static int evaluate(String exp) {
         Stack<Integer> stack = new Stack<>();

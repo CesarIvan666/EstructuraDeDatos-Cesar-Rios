@@ -1,24 +1,22 @@
 package utils;
 import java.util.Optional;
-import java.util.Optional;
-
 /**
- * La clase Stack<T> representa una pila genérica basada en una lista enlazada.
+ * Esta clase representa una implementación de una pila (stack) genérica utilizando una lista enlazada.
  *
- * @param <T> El tipo de datos de los elementos en la pila.
+ * @param <T> El tipo de datos de los elementos almacenados en la pila.
  */
 public class Stack<T> {
     private final ListaEnlazada<T> list;
 
     /**
-     * Constructor predeterminado que crea una pila vacía.
+     * Constructor que crea una pila vacía.
      */
     public Stack() {
         list = new ListaEnlazada<>();
     }
 
     /**
-     * Constructor que crea una pila basada en una lista enlazada existente.
+     * Constructor que crea una pila con una lista enlazada proporcionada.
      *
      * @param l La lista enlazada que se utilizará como base para la pila.
      */
@@ -27,9 +25,9 @@ public class Stack<T> {
     }
 
     /**
-     * Devuelve el tamaño actual de la pila.
+     * Obtiene el número de elementos en la pila.
      *
-     * @return El tamaño actual de la pila.
+     * @return El número de elementos en la pila.
      */
     public int size() {
         return list.size();
@@ -47,7 +45,8 @@ public class Stack<T> {
     /**
      * Elimina y devuelve el elemento en la parte superior de la pila.
      *
-     * @return El elemento en la parte superior de la pila (si existe).
+     * @return Un objeto Optional que contiene el elemento eliminado de la pila,
+     *         o empty si la pila está vacía.
      */
     public Optional<T> pop() {
         var e = peek();
@@ -56,9 +55,10 @@ public class Stack<T> {
     }
 
     /**
-     * Devuelve el elemento en la parte superior de la pila sin eliminarlo.
+     * Obtiene el elemento en la parte superior de la pila sin eliminarlo.
      *
-     * @return El elemento en la parte superior de la pila (si existe).
+     * @return Un objeto Optional que contiene el elemento en la parte superior de la pila,
+     *         o empty si la pila está vacía.
      */
     public Optional<T> peek() {
         if (isEmpty()) return Optional.empty();
@@ -75,10 +75,10 @@ public class Stack<T> {
     }
 
     /**
-     * Combina dos pilas alternando sus elementos.
+     * Crea una pila alternativa combinando elementos de dos pilas.
      *
      * @param s La segunda pila con la que se alternarán los elementos.
-     * @return Una nueva pila que contiene los elementos alternados.
+     * @return Una nueva pila que contiene elementos alternados de ambas pilas.
      */
     public Stack<T> alternate(Stack<T> s) {
         var alt = new Stack<T>();
@@ -90,9 +90,9 @@ public class Stack<T> {
     }
 
     /**
-     * Invierte la pila actual.
+     * Invierte el orden de los elementos en la pila.
      *
-     * @return Una nueva pila que contiene los elementos en orden inverso.
+     * @return Una nueva pila con los elementos en orden inverso.
      */
     public Stack<T> inverse() {
         var s = new Stack<T>();
@@ -104,13 +104,11 @@ public class Stack<T> {
     }
 
     /**
-     * Devuelve una representación en cadena de la pila.
+     * Convierte la pila en una cadena de caracteres para su representación.
      *
-     * @return Una cadena que representa la pila.
+     * @return Una cadena que representa los elementos de la pila.
      */
     public String toString() {
         return list.toString();
     }
 }
-
-
