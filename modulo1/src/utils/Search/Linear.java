@@ -34,3 +34,4 @@ public class Linear extends Sorter {
         return -1;
     }
 }
+

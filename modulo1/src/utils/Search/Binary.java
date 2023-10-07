@@ -45,3 +45,4 @@ public class Binary extends Sorter {
         return -1;
     }
 }
+
