@@ -1,19 +1,40 @@
 package utils;
-import utils.*;
+import utils.Sorters.*;
 /**
  * Esta clase es una fábrica que proporciona instancias de algoritmos de ordenación basadas en el método especificado.
  */
 public class SorterFactory{
-
     /**
      * Obtiene una instancia del algoritmo de ordenación correspondiente al método especificado.
      *
      * @param method El método de ordenación deseado.
      * @return Una instancia de la clase Sorter que implementa el algoritmo de ordenación seleccionado.
      */
+
     public static Sorter getSorter(SortingMethods method){
-        return switch(method){
-            case BUBBLE-> new Sorter(){
+        Sorter s;
+        switch(method){
+            case BUBBLE: s = new Bubble(); break;
+            case SELECTION: s= new Selection(); break;
+            case INSERTION: s= new Insertion(); break;
+            case SHELL: s= new Shell(); break;
+            case QUICK: s= new QuickSort(); break;
+            case HEAP: s= new HeapSort(); break;
+            case MERGE: s= new Merge(); break;
+            default: s = null;
+        }
+        return s;
+    }
+    /**
+     * Obtiene una instancia del algoritmo de ordenación correspondiente al método especificado (segunda versión).
+     *
+     * @param method El método de ordenación deseado.
+     * @return Una instancia de la clase Sorter que implementa el algoritmo de ordenación seleccionado.
+     */
+    public static Sorter getSorter2(SortingMethods method){
+        Sorter s;
+        switch(method){
+            case BUBBLE: s = new Sorter(){
                 public void sort(int[] N){
                     var len = N.length;
                     var swapped = true;
@@ -29,9 +50,8 @@ public class SorterFactory{
                         }
                     }
                 }
-            };
-
-            case SELECTION-> new Sorter(){
+            }; break;
+            case SELECTION: s= new Sorter(){
                 public void sort(int[] N) {
                     for(int i=0; i<N.length-1; i++){
                         int minIndex = i;
@@ -50,8 +70,8 @@ public class SorterFactory{
                         }
                     }
                 }
-            };
-            case INSERTION-> new Sorter(){
+            }; break;
+            case INSERTION: s= new Sorter(){
                 public void sort(int[] N) {
                     for(int i=1; i<N.length; i++){
 
@@ -67,8 +87,8 @@ public class SorterFactory{
                         MOVIMIENTOS++;
                     }
                 }
-            };
-            case SHELL-> new Sorter(){
+            };break;
+            case SHELL: s= new Sorter(){
                 public void sort(int[] N) {
                     int h = 1;
                     while(h < N.length / 3){
@@ -90,14 +110,10 @@ public class SorterFactory{
                         h = h/3;
                     }
                 }
-            };
-                case MERGE -> null;
-                case QUICK -> null;
-                case HEAP -> null;
-                default -> throw new IllegalStateException("Unexpected value");
+            }; break;
 
-
-         };
-         }
+            default: s = null;
+        }
+        return s;
+    }
 }
-
