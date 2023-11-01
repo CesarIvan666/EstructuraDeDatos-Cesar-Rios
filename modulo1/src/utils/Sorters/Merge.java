@@ -65,19 +65,20 @@ public class Merge extends Sorter {
             if (index1 == n1.length) {
                 N[i] = n2[index2];
                 index2++;
+                ++MOVIMIENTOS;
             } else if (index2 == n2.length) {
                 N[i] = n1[index1];
                 index1++;
+                ++MOVIMIENTOS;
             } else if (n1[index1] < n2[index2]) {
                 N[i] = n1[index1];
                 index1++;
-                ++MOVIMIENTOS;
+                ++COMPARACIONES;
             } else {
                 N[i] = n2[index2];
                 index2++;
                 ++MOVIMIENTOS;
             }
-            ++COMPARACIONES;
         }
 
         return N;
