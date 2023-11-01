@@ -19,9 +19,9 @@ public class PerformanceTester {
      * @param sorter El algoritmo de ordenación que se va a probar.
      */
     public static void testPerformance(Sorter sorter) {
-        final int RANGO = 1_000;
+        final int RANGO = 10_000;
         final int ITERACIONES = 500;
-        final int INCREMENTOS = 100;
+        final int INCREMENTOS = 1000;
 
         double[][] performanceResults = new double[RANGO / INCREMENTOS][2];
         for (int N = 1, k = 0; N <= RANGO; N += INCREMENTOS, k++) {
